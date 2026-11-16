@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>牛頓運動定律｜物理筆記站</title>
-  <meta name="description" content="慣性、F = ma、作用力與反作用力，古典力學的起點。">
+  <meta name="description" content="牛頓三定律與受力分析：慣性、F = ma、作用與反作用。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -30,14 +30,14 @@
       <p class="title-en">Newton's Laws of Motion</p>
       <div id="note-meta"></div>
     </div>
-    <p class="lead">慣性、F = ma、作用力與反作用力，古典力學的起點。</p>
+    <p class="lead">牛頓三定律與受力分析：慣性、F = ma、作用與反作用。</p>
 
     <section id="concept">
       <h2>一、核心概念</h2>
-      <p>牛頓運動定律（Newton's Laws of Motion）回答一個問題：<strong>力如何改變物體的運動？</strong>三條定律合起來，就是整個古典力學的地基。</p>
-      <p><strong>第一定律（慣性定律，Law of Inertia）</strong>：物體不受外力（或合力為零）時，靜者恆靜、動者恆做等速直線運動。重點是「運動不需要力來維持」，力是用來<em>改變</em>運動的。</p>
-      <p><strong>第二定律</strong>：合力等於質量乘以加速度。質量越大，同樣的力造成的加速度越小，所以質量就是「慣性的大小」。</p>
-      <p><strong>第三定律（作用與反作用）</strong>：A 推 B，B 一定同時以大小相等、方向相反的力推 A。這兩個力作用在<em>不同物體</em>上。</p>
+      <p>牛頓運動定律（Newton's Laws of Motion）描述力怎麼改變物體的運動。大部分古典力學的題目，都從畫受力圖、寫出第二定律開始。</p>
+      <p>第一定律又叫慣性定律（Law of Inertia）：物體不受外力（或合力為零）時，靜者恆靜、動者恆做等速直線運動。所以物體等速前進時不需要力推著，合力不為零時速度才會改變。</p>
+      <p>第二定律說合力等於質量乘以加速度。質量越大，同樣的力造成的加速度越小，所以質量可以拿來衡量慣性的大小。</p>
+      <p>第三定律講作用與反作用：A 推 B 時，B 同時以大小相等、方向相反的力推 A，這兩個力作用在不同物體上。</p>
     </section>
 
     <section id="formulas">
@@ -70,7 +70,7 @@
           <p>取沿斜面向下為 \( x \) 軸、垂直斜面為 \( y \) 軸，把重力分解：</p>
           $$ mg\sin\theta = ma \;\Rightarrow\; a = g\sin\theta = 9.8 \times 0.5 = 4.9\ \text{m/s}^2 $$
           $$ N - mg\cos\theta = 0 \;\Rightarrow\; N = 2 \times 9.8 \times 0.866 \approx 17.0\ \text{N} $$
-          <p><strong>答：</strong>\( a = 4.9\ \text{m/s}^2 \)（沿斜面向下），\( N \approx 17.0\ \text{N} \)。注意加速度與質量無關。</p>
+          <p>答：\( a = 4.9\ \text{m/s}^2 \)（沿斜面向下），\( N \approx 17.0\ \text{N} \)。加速度與質量無關，換成 10 kg 的木塊也一樣。</p>
         </details>
       </div>
       <div class="example">
@@ -83,7 +83,7 @@
           <p>兩式相加消去 \( T \)：</p>
           $$ a = \frac{m_1 - m_2}{m_1 + m_2}\,g = \frac{2}{4}\times 9.8 = 4.9\ \text{m/s}^2 $$
           $$ T = m_2(g + a) = 1 \times (9.8 + 4.9) = 14.7\ \text{N} $$
-          <p><strong>答：</strong>\( a = 4.9\ \text{m/s}^2 \)，\( T = 14.7\ \text{N} \)。驗算：\( T = \frac{2m_1m_2}{m_1+m_2}g = \frac{6}{4}\times 9.8 = 14.7\ \text{N} \)。✔</p>
+          <p>答：\( a = 4.9\ \text{m/s}^2 \)，\( T = 14.7\ \text{N} \)。用公式 \( T = \frac{2m_1m_2}{m_1+m_2}g = \frac{6}{4}\times 9.8 = 14.7\ \text{N} \) 驗算，結果相同。</p>
         </details>
       </div>
     </section>
@@ -91,8 +91,8 @@
     <section id="pitfalls">
       <h2>四、常見誤區</h2>
       <ul class="pitfall-list">
-        <li>❌ 物體在動，就一定有力推著它 → ✅ 等速直線運動的合力為零；力改變的是速度，不是維持速度。</li>
-        <li>❌ 作用力與反作用力大小相等、方向相反，所以會互相抵消 → ✅ 它們作用在<strong>不同物體</strong>上，不能相加抵消。</li>
+        <li>❌ 物體在動，就一定有力推著它 → ✅ 等速直線運動的合力為零，合力不為零時速度才會改變。</li>
+        <li>❌ 作用力與反作用力大小相等、方向相反，所以會互相抵消 → ✅ 它們作用在不同物體上，不能相加抵消。</li>
         <li>❌ 正向力永遠等於 \( mg \) → ✅ 正向力要由受力分析求出，斜面上是 \( mg\cos\theta \)，電梯加速時也不等於 \( mg \)。</li>
         <li>❌ 慣性是一種力 → ✅ 慣性是物體的性質，用質量衡量，不會出現在受力圖上。</li>
       </ul>
@@ -104,7 +104,7 @@
         <li>第一定律：合力為零 ⇔ 速度不變（含靜止）。</li>
         <li>第二定律：\( \sum \vec{F} = m\vec{a} \)，先畫受力圖、選座標軸，再分量列式。</li>
         <li>第三定律：作用力與反作用力同時出現、作用在不同物體。</li>
-        <li>解題 SOP：選系統 → 畫受力圖 → 列方程 → 解聯立 → 檢查單位與極限情況。</li>
+        <li>解題順序：選系統、畫受力圖、列方程、解聯立，最後檢查單位與極限情況。</li>
       </ol>
     </section>
 

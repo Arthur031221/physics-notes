@@ -16,7 +16,7 @@ window.NOTES = [
     titleEn: "Newton's Laws of Motion",
     category: "mechanics",
     level: "基礎",
-    summary: "慣性、F = ma、作用力與反作用力，古典力學的起點。",
+    summary: "牛頓三定律與受力分析：慣性、F = ma、作用與反作用。",
     updated: "2026-11-17"
   },
   {
@@ -25,7 +25,7 @@ window.NOTES = [
     titleEn: "Simple Harmonic Motion",
     category: "mechanics",
     level: "基礎",
-    summary: "回復力與位移成正比的振動，彈簧與單擺的共同模型。",
+    summary: "回復力與位移成正比、方向相反的振動，彈簧和小角度單擺都適用。",
     updated: "2026-11-17"
   },
   {
