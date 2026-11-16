@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- 筆記模板：複製到 notes/<id>.html，替換所有 {{...}}，依 CLAUDE.md 第 4 節填入 5 個 section -->
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}｜物理筆記站</title>
+  <meta name="description" content="{{SUMMARY}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../data/notes.js"></script>
+  <script src="../assets/main.js"></script>
+</head>
+<body data-note-id="{{NOTE_ID}}">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../index.html">物理筆記站<span>Physics Notes</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav id="breadcrumb"></nav>
+
+    <div class="note-header">
+      <h1>{{TITLE}}</h1>
+      <p class="title-en">{{TITLE_EN}}</p>
+      <div id="note-meta"></div>
+    </div>
+    <p class="lead">{{SUMMARY}}</p>
+
+    <section id="concept">
+      <h2>一、核心概念</h2>
+      <p>（2–4 段：這個主題在講什麼、物理直覺是什麼。）</p>
+    </section>
+
+    <section id="formulas">
+      <h2>二、重要公式</h2>
+      <div class="formula-box">
+        $$ \text{公式} $$
+        <p>一句話說明符號意義。</p>
+      </div>
+    </section>
+
+    <section id="examples">
+      <h2>三、範例題</h2>
+      <div class="example">
+        <h3>範例 1：題目名稱</h3>
+        <p>題目敘述……</p>
+        <details class="solution">
+          <summary>看詳解</summary>
+          <p>完整解題過程，最後答案要有數值與單位。</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="pitfalls">
+      <h2>四、常見誤區</h2>
+      <ul class="pitfall-list">
+        <li>❌ 錯誤想法 → ✅ 正確觀念</li>
+      </ul>
+    </section>
+
+    <section id="summary">
+      <h2>五、重點整理</h2>
+      <ol class="summary-list">
+        <li>一句話重點。</li>
+      </ol>
+    </section>
+
+    <nav id="pager"></nav>
+  </main>
+
+  <footer class="site-footer">
+    物理筆記站・依 <a href="https://github.com/Arthur031221/physics-notes/blob/main/CLAUDE.md">CLAUDE.md</a> 規則建立
+  </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>簡諧運動｜物理筆記站</title>
+  <meta name="description" content="回復力與位移成正比的振動，彈簧與單擺的共同模型。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../data/notes.js"></script>
+  <script src="../assets/main.js"></script>
+</head>
+<body data-note-id="mechanics-simple-harmonic-motion">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../index.html">物理筆記站<span>Physics Notes</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav id="breadcrumb"></nav>
+
+    <div class="note-header">
+      <h1>簡諧運動</h1>
+      <p class="title-en">Simple Harmonic Motion</p>
+      <div id="note-meta"></div>
+    </div>
+    <p class="lead">回復力與位移成正比的振動，彈簧與單擺的共同模型。</p>
+
+    <section id="concept">
+      <h2>一、核心概念</h2>
+      <p>簡諧運動（Simple Harmonic Motion, SHM）是指物體受到的<strong>回復力（Restoring Force）與離開平衡點的位移成正比、方向相反</strong>時所做的振動。最典型的例子是理想彈簧上的物體。</p>
+      <p>為什麼它這麼重要？因為幾乎任何系統在穩定平衡點附近做「小幅度」振動時，都可以近似成簡諧運動：單擺、分子振動、LC 電路，數學形式都一樣。</p>
+      <p>簡諧運動的位移隨時間呈正弦（或餘弦）變化，而且<strong>週期只由系統本身決定，與振幅無關</strong>，這叫等時性。</p>
+    </section>
+
+    <section id="formulas">
+      <h2>二、重要公式</h2>
+      <div class="formula-box">
+        $$ F = -kx \quad\Longrightarrow\quad \frac{d^2x}{dt^2} + \omega^2 x = 0 $$
+        <p>虎克定律代入 \( F = ma \) 得到簡諧運動的微分方程；\( k \) 為彈力常數（N/m）。</p>
+      </div>
+      <div class="formula-box">
+        $$ x(t) = A\cos(\omega t + \phi) $$
+        <p>通解：\( A \) 為振幅（m），\( \omega \) 為角頻率（rad/s），\( \phi \) 為初相位，由初始條件決定。</p>
+      </div>
+      <div class="formula-box">
+        $$ \omega = \sqrt{\frac{k}{m}}, \qquad T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}} $$
+        <p>彈簧振子的角頻率與週期，只和質量 \( m \)、彈力常數 \( k \) 有關。</p>
+      </div>
+      <div class="formula-box">
+        $$ T_{\text{單擺}} = 2\pi\sqrt{\frac{L}{g}} \quad (\theta \ll 1) $$
+        <p>擺長 \( L \) 的單擺在小角度（約 \( \theta < 10^\circ \)）時才近似為簡諧運動。</p>
+      </div>
+      <div class="formula-box">
+        $$ E = \tfrac{1}{2}mv^2 + \tfrac{1}{2}kx^2 = \tfrac{1}{2}kA^2, \qquad v_{\max} = A\omega $$
+        <p>力學能守恆：動能與位能互相轉換，總能量與振幅平方成正比。</p>
+      </div>
+    </section>
+
+    <section id="examples">
+      <h2>三、範例題</h2>
+      <div class="example">
+        <h3>範例 1：水平彈簧振子</h3>
+        <p>質量 \( m = 0.5\ \text{kg} \) 的物體連接在 \( k = 200\ \text{N/m} \) 的彈簧上，在光滑水平面上以振幅 \( A = 0.1\ \text{m} \) 振動。求 (a) 週期 (b) 最大速率 (c) 總力學能。</p>
+        <details class="solution">
+          <summary>看詳解</summary>
+          $$ \omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{200}{0.5}} = 20\ \text{rad/s} $$
+          <p>(a) \( T = \dfrac{2\pi}{\omega} = \dfrac{2\pi}{20} \approx 0.314\ \text{s} \)</p>
+          <p>(b) \( v_{\max} = A\omega = 0.1 \times 20 = 2\ \text{m/s} \)</p>
+          <p>(c) \( E = \tfrac{1}{2}kA^2 = \tfrac{1}{2}\times 200 \times 0.1^2 = 1\ \text{J} \)</p>
+          <p><strong>驗算：</strong>\( \tfrac{1}{2}mv_{\max}^2 = \tfrac{1}{2}\times 0.5 \times 2^2 = 1\ \text{J} \)，與 (c) 相同。✔</p>
+        </details>
+      </div>
+      <div class="example">
+        <h3>範例 2：單擺週期</h3>
+        <p>擺長 \( L = 1.0\ \text{m} \) 的單擺在地表（\( g = 9.8\ \text{m/s}^2 \)）做小角度擺動，週期多少？若擺長變為 4 倍呢？</p>
+        <details class="solution">
+          <summary>看詳解</summary>
+          $$ T = 2\pi\sqrt{\frac{1.0}{9.8}} \approx 2\pi \times 0.319 \approx 2.01\ \text{s} $$
+          <p>\( T \propto \sqrt{L} \)，擺長變 4 倍，週期變 2 倍：\( T' \approx 4.01\ \text{s} \)。</p>
+          <p><strong>答：</strong>約 \( 2.0\ \text{s} \)；擺長 4 倍時約 \( 4.0\ \text{s} \)。</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="pitfalls">
+      <h2>四、常見誤區</h2>
+      <ul class="pitfall-list">
+        <li>❌ 振幅越大，週期越長 → ✅ 簡諧運動的週期與振幅無關（單擺只在小角度時成立）。</li>
+        <li>❌ 角頻率 \( \omega \) 就是物體轉動的角速度 → ✅ 彈簧振子根本沒有轉動，\( \omega \) 只是描述振動快慢的參數，\( \omega = 2\pi f \)。</li>
+        <li>❌ 在平衡點速度為零 → ✅ 平衡點速度最大、加速度為零；端點速度為零、加速度最大。</li>
+        <li>❌ 單擺週期跟擺錘質量有關 → ✅ 單擺週期只跟 \( L \) 與 \( g \) 有關。</li>
+      </ul>
+    </section>
+
+    <section id="summary">
+      <h2>五、重點整理</h2>
+      <ol class="summary-list">
+        <li>判斷 SHM：回復力 \( F = -kx \)，或運動方程為 \( \ddot{x} + \omega^2 x = 0 \)。</li>
+        <li>彈簧 \( T = 2\pi\sqrt{m/k} \)，單擺 \( T = 2\pi\sqrt{L/g} \)，皆與振幅無關。</li>
+        <li>\( x = A\cos(\omega t + \phi) \)，振幅與相位由初始條件決定。</li>
+        <li>總能量 \( E = \tfrac{1}{2}kA^2 \)，平衡點動能最大、端點位能最大。</li>
+      </ol>
+    </section>
+
+    <nav id="pager"></nav>
+  </main>
+
+  <footer class="site-footer">
+    物理筆記站・依 <a href="https://github.com/Arthur031221/physics-notes/blob/main/CLAUDE.md">CLAUDE.md</a> 規則建立
+  </footer>
+</body>
+</html>

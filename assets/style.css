@@ -1,0 +1,143 @@
+/* 物理筆記站：全站唯一樣式表。可用 class 清單見 CLAUDE.md 第 3 節。 */
+
+:root {
+  --primary: #1e3a8a;
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --ok: #15803d;
+  --bad: #b91c1c;
+  --cat: #1e3a8a; /* 由 main.js 依分類覆寫 */
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans TC", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+a { color: var(--primary); }
+
+.container { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- 頁首 / 頁尾 ---------- */
+.site-header {
+  background: var(--primary);
+  color: #fff;
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.site-header a { color: #fff; text-decoration: none; font-weight: 700; }
+.site-header .logo span { opacity: .7; font-weight: 400; margin-left: 6px; font-size: .9em; }
+
+.site-footer {
+  margin-top: 64px; padding: 24px 0; border-top: 1px solid var(--border);
+  color: var(--muted); font-size: .9rem; text-align: center;
+}
+
+/* ---------- 首頁 ---------- */
+.hero { padding: 48px 0 24px; }
+.hero h1 { margin: 0 0 8px; font-size: 2.2rem; color: var(--primary); }
+.hero p { margin: 0; color: var(--muted); }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 24px 0 16px; }
+#filters { display: flex; flex-wrap: wrap; gap: 8px; }
+#filters button {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  padding: 4px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: .9rem;
+}
+#filters button.active { background: var(--cat); border-color: var(--cat); color: #fff; }
+#search {
+  flex: 1; min-width: 180px; padding: 6px 12px; font: inherit; font-size: .95rem;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+}
+#note-count { color: var(--muted); font-size: .9rem; margin: 0 0 16px; }
+
+#note-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card {
+  display: block; text-decoration: none; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--cat);
+  border-radius: var(--radius); padding: 16px 18px; transition: transform .15s, box-shadow .15s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+.card h3 { margin: 8px 0 0; font-size: 1.2rem; }
+.card-en { margin: 0; color: var(--muted); font-size: .85rem; }
+.card-summary { margin: 8px 0; font-size: .95rem; }
+.card-date { margin: 0; color: var(--muted); font-size: .8rem; }
+.card-meta { display: flex; gap: 6px; align-items: center; }
+.empty { color: var(--muted); }
+
+/* ---------- 共用標籤 ---------- */
+.cat-badge {
+  background: var(--cat); color: #fff; font-size: .75rem; padding: 1px 10px; border-radius: 999px;
+}
+.tag {
+  border: 1px solid var(--border); color: var(--muted); font-size: .75rem;
+  padding: 0 8px; border-radius: 999px; background: var(--surface);
+}
+
+/* ---------- 筆記頁 ---------- */
+#breadcrumb { font-size: .85rem; color: var(--muted); margin: 20px 0 0; }
+#breadcrumb a { text-decoration: none; }
+
+.note-header { padding: 16px 0 8px; border-bottom: 3px solid var(--cat); margin-bottom: 8px; }
+.note-header h1 { margin: 0; font-size: 2rem; }
+.note-header .title-en { margin: 0; color: var(--muted); }
+#note-meta { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.note-date { color: var(--muted); font-size: .8rem; }
+.lead { color: var(--muted); font-style: italic; }
+
+section { margin-top: 40px; }
+section h2 {
+  font-size: 1.4rem; margin: 0 0 12px; padding-left: 12px; border-left: 5px solid var(--cat);
+}
+
+.formula-box {
+  background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--cat);
+  border-radius: var(--radius); padding: 8px 18px; margin: 14px 0; overflow-x: auto;
+}
+.formula-box p { margin: 4px 0; font-size: .95rem; color: var(--muted); }
+
+.example {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 18px; margin: 16px 0;
+}
+.example h3 { margin: 4px 0 8px; font-size: 1.05rem; color: var(--cat); }
+
+details.solution { margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 8px; }
+details.solution summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.solution[open] summary { margin-bottom: 8px; }
+
+.pitfall-list { list-style: none; padding: 0; }
+.pitfall-list li {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 16px; margin-bottom: 10px;
+}
+
+.summary-list li { margin-bottom: 6px; }
+
+#pager {
+  display: flex; justify-content: space-between; gap: 12px;
+  margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border);
+}
+#pager a {
+  text-decoration: none; padding: 8px 14px; border: 1px solid var(--border);
+  border-radius: var(--radius); background: var(--surface);
+}
+#pager a:hover { border-color: var(--cat); }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .hero h1 { font-size: 1.7rem; }
+  .note-header h1 { font-size: 1.6rem; }
+}
